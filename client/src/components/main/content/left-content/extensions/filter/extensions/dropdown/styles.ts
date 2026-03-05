@@ -23,6 +23,10 @@ export const ItemsListInner = styled.div`
   &:last-child {
     border-bottom: none;
   }
+
+  @media screen and (max-width: 480px) {
+    width: min(282px, calc(100vw - 32px));
+  }
 `;
 export const DropDownAction = styled.div`
   position: relative;

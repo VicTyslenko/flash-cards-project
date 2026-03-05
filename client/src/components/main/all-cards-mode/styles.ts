@@ -13,4 +13,12 @@ export const Wrapper = styled.div`
     border-bottom: none;
     padding: 0;
   }
+
+  @media screen and (max-width: 768px) {
+    gap: 24px;
+  }
+
+  @media screen and (max-width: 480px) {
+    gap: 16px;
+  }
 `;

@@ -15,6 +15,15 @@ export const Form = styled.form`
   border-radius: 16px;
   background: var(--colors-neutral-0, #fff);
 
+  @media screen and (max-width: 768px) {
+    padding: 24px;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
   & .default-button {
     padding: 12px;
     display: flex;
@@ -48,30 +57,45 @@ export const InputWrapp = styled.div`
 
 export const Input = styled.input`
   padding: 16px;
+  width: 100%;
+  max-width: 409px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid #2e1401;
+  background: #fff;
+
   &::placeholder {
     color: #6d5b4d;
     font-size: 16px;
     font-weight: 400;
     line-height: 140%;
   }
-  border-radius: 6px;
-  border: 1px solid #2e1401;
-  background: #fff;
-  max-width: 409px;
+
+  @media screen and (max-width: 480px) {
+    max-width: 100%;
+    padding: 12px 14px;
+  }
 `;
 
 export const TextArea = styled.textarea`
   padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
   border-radius: 6px;
   border: 1px solid #2e1401;
   background: #fff;
-
   min-height: 100px;
+  resize: vertical;
+
   &::placeholder {
     color: #6d5b4d;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 14px;
     font-weight: 500;
     line-height: 140%;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 12px 14px;
   }
 `;

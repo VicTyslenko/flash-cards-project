@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   padding: 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 16px;
   border-bottom: 1px solid #2e1401;
 
   & .default-button {
@@ -12,13 +12,24 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-left: auto; /* Push Shuffle to the right on desktop */
   }
-`;
 
-export const FlexWrapp = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  @media screen and (max-width: 768px) {
+    padding: 16px 20px;
+    gap: 12px;
+  }
+
+  @media screen and (max-width: 480px) {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 16px;
+
+    & .default-button {
+      order: 2;
+      margin-left: auto;
+    }
+  }
 `;
 
 export const DropDownWrapp = styled.div`
@@ -54,6 +65,11 @@ export const CheckBoxWrapp = styled.div`
     width: 16px;
     height: 16px;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 480px) {
+    order: 3;
+    flex-basis: 100%; /* Push to new row below Dropdown + Shuffle */
   }
 `;
 

@@ -24,6 +24,22 @@ export const Wrapper = styled.div`
     color: #2e1401;
     font-size: 24px;
   }
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 24px;
+
+    & .default-typography {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: 16px;
+
+    & .default-typography {
+      font-size: 16px;
+    }
+  }
 `;
 
 export const LogoWrapp = styled.div`
@@ -41,4 +57,19 @@ export const ButtonsWrapp = styled.div`
   box-shadow: 1px 2px 0px 0px #2e1401;
   border: 1px solid #2e1401;
   gap: 4px;
+
+  @media screen and (max-width: 768px) {
+    & .default-button {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    & .default-button {
+      min-width: auto;
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+  }
 `;

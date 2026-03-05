@@ -1,10 +1,17 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 import type { Card } from "../slices/cards/models";
-import type { BodyProps,DeleteCardResponse, GetCards, GetCardsResponse } from "./models";
+import type {
+  BodyProps,
+  DeleteCardResponse,
+  GetCards,
+  GetCardsResponse,
+} from "./models";
+
+const base_url = import.meta.env.VITE_API_URL;
 
 export const apiSlice = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/api" }),
+  baseQuery: fetchBaseQuery({ baseUrl: base_url }),
   tagTypes: ["Cards"],
   endpoints: (builder) => ({
     // get all cards request
@@ -15,7 +22,7 @@ export const apiSlice = createApi({
 
     // get limited cards request
     getCardsLimited: builder.query<GetCardsResponse, number>({
-      query: (limit) => `cards/limited/?limit=${limit}`,
+      query: (limit) => `cards/limited?limit=${limit}`,
       providesTags: ["Cards"],
     }),
 

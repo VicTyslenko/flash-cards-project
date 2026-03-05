@@ -21,4 +21,17 @@ export const Wrapper = styled.div`
     font-weight: 500;
     line-height: 140%;
   }
+
+  @media screen and (max-width: 480px) {
+    padding: 16px;
+
+    & .default-button {
+      min-width: auto;
+      padding: 10px;
+    }
+
+    & .default-button .default-typography {
+      display: none;
+    }
+  }
 `;

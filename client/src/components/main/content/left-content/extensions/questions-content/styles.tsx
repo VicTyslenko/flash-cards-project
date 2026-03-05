@@ -9,6 +9,16 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   height: 100%;
   margin-top: 43px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 16px;
+    margin-top: 32px;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 0 12px;
+    margin-top: 20px;
+  }
 `;
 
 type StyledButtonProps = {
@@ -63,7 +73,23 @@ export const StyledButton = styled(DefaultButton)<StyledButtonProps>`
   }
 
   @media screen and (max-width: 768px) {
-    min-height: 360px;
+    min-height: 300px;
+
+    & .title {
+      font-size: 28px;
+    }
+    & .title-answer {
+      font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    min-height: 260px;
+    padding: 20px;
+
+    & .title {
+      font-size: 24px;
+    }
   }
 `;
 
@@ -101,6 +127,14 @@ export const Title = styled.h1`
   font-weight: 700;
   color: #2e1401;
   line-height: 120%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 24px;
+  }
 `;
 
 export const ActionsWrapp = styled.div`
@@ -124,5 +158,14 @@ export const ActionsWrapp = styled.div`
   }
   & .mastered_btn {
     opacity: 0.5;
+  }
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    gap: 12px;
+
+    & .default-button {
+      width: 100%;
+    }
   }
 `;

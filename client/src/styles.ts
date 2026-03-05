@@ -8,8 +8,13 @@ export const AppWrapper = styled.div`
   height: 100vh;
   overflow: auto;
 
-  /* Mobile - increase side padding and add bottom padding */
+  /* Tablet */
   @media screen and (max-width: 768px) {
-    padding: 20px 32px 64px;
+    padding: 20px 16px 40px;
+  }
+
+  /* Mobile */
+  @media screen and (max-width: 480px) {
+    padding: 12px 12px 40px;
   }
 `;

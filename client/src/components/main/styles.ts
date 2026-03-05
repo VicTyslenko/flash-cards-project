@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   overflow: hidden;
 
   @media screen and (max-width: 768px) {
-    /* Account for bottom padding on mobile */
-    max-height: calc(100vh - 20px - 64px); /* viewport - top padding - bottom padding */
+    height: auto;
+    overflow: visible;
   }
 `;

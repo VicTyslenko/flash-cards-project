@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  min-width: 600px;
+  width: min(600px, calc(100vw - 32px));
+  box-sizing: border-box;
   border-radius: var(--corner-radius-16, 16px);
   border-top: 1px solid var(--colors-neutral-900, #2e1401);
   border-right: 4px solid var(--colors-neutral-900, #2e1401);
@@ -26,6 +27,10 @@ export const Text = styled.p`
 `;
 export const TopSection = styled.div`
   padding: 24px;
+
+  @media screen and (max-width: 480px) {
+    padding: 20px 16px;
+  }
 `;
 
 export const ButtonsWrapp = styled.div`
@@ -33,6 +38,10 @@ export const ButtonsWrapp = styled.div`
   justify-content: flex-end;
   gap: 10px;
   padding: 12px 24px 16px;
+
+  @media screen and (max-width: 480px) {
+    padding: 12px 16px 16px;
+  }
 
   & .default-button {
     color: var(--colors-neutral-900, #2e1401);

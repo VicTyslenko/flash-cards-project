@@ -17,4 +17,13 @@ export const ModalInner = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @media screen and (max-width: 480px) {
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+  }
 `;

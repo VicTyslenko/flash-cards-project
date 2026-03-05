@@ -20,4 +20,12 @@ export const Wrapper = styled.div`
   & img {
     cursor: pointer;
   }
+
+  @media screen and (max-width: 480px) {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    min-width: auto;
+    width: auto;
+  }
 `;

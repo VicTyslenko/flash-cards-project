@@ -17,14 +17,12 @@ export const Filter = ({ data }: FilterProps) => {
 
   return (
     <S.Wrapper className="filter">
-      <S.FlexWrapp>
-        <DropDown data={categories} />
+      <DropDown data={categories} />
 
-        <S.CheckBoxWrapp>
-          <CheckBoxInput checked={masteredHidden} onChange={handleHideMastered} id="hide-input" />
-          <S.Label htmlFor="hide-input">Hide Mastered</S.Label>
-        </S.CheckBoxWrapp>
-      </S.FlexWrapp>
+      <S.CheckBoxWrapp>
+        <CheckBoxInput checked={masteredHidden} onChange={handleHideMastered} id="hide-input" />
+        <S.Label htmlFor="hide-input">Hide Mastered</S.Label>
+      </S.CheckBoxWrapp>
 
       <DefaultButton onClick={handleShuffleCards}>
         <img src={ShuffleIcon} alt="shuffle" />
