@@ -11,6 +11,7 @@ async function seed() {
         `
        INSERT INTO flashcards (id, question, answer, category, known_count)
        VALUES ($1, $2, $3, $4, $5)
+       ON CONFLICT DO NOTHING
         `,
         [randomUUID(), card.question, card.answer, card.category, card.knownCount],
       );
