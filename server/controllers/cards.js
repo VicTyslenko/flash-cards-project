@@ -12,6 +12,7 @@ export const getAllCards = async (_, res) => {
     res.json({ allCards: rows });
   } catch (error) {
     console.log(error);
+    res.sendStatus(500);
   }
 };
 
@@ -89,6 +90,7 @@ export const createCard = async (req, res) => {
     res.json(rows[0]);
   } catch (error) {
     console.log(error);
+    res.sendStatus(500);
   }
 };
 
@@ -118,6 +120,7 @@ export const editCard = async (req, res) => {
     return res.status(200).json(rows[0]);
   } catch (error) {
     console.log(error);
+    res.sendStatus(500);
   }
 };
 // reset to default card's mastering statistic
