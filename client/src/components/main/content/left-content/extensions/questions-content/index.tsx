@@ -16,15 +16,20 @@ import type { QuestionProps } from "../models";
 import * as S from "./styles";
 
 export const QuestionsContent = ({ currentCard, data }: QuestionProps) => {
-  const { handleCardUpdate, progressCount, isMastered, handleResetCard, handleToggleCard, isQuestion } = useQuestionsContent({
+  const { handleCardUpdate, progressCount, isMastered, handleResetCard, handleToggleCard, isQuestion, isLoading } = useQuestionsContent({
     currentCard,
     data,
   });
 
   return (
     <S.Wrapper>
-      <S.StyledButton $allMastered={!data.length} onClick={handleToggleCard} $isQuestion={isQuestion}>
-        {data.length ? (
+      <S.StyledButton $allMastered={!data.length} onClick={handleToggleCard} $isQuestion={isQuestion} disabled={isLoading}>
+        {isLoading ? (
+          <S.LoadingWrapper>
+            <S.LoadingSpinner />
+            <S.LoadingText>Loading cards...</S.LoadingText>
+          </S.LoadingWrapper>
+        ) : data.length ? (
           <>
             <S.CategoryInfo>{currentCard?.category}</S.CategoryInfo>
 

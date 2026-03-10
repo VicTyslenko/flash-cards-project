@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router";
 import { useStoreDispatch, useStoreSelector } from "../../../../../../hooks";
 
 import {
+  useGetAllCardsQuery,
   useResetCardMutation,
   useUpdateCardMutation,
 } from "../../../../../../api/apiSlice";
@@ -23,6 +24,8 @@ export const useQuestionsContent = ({ currentCard, data }: Props) => {
 
   // toggle card question to answer
   const handleToggleCard = () => dispatch(toggleCard());
+
+  const { isLoading } = useGetAllCardsQuery();
 
   const [updateCard] = useUpdateCardMutation();
   const [resetCard] = useResetCardMutation();
@@ -70,5 +73,6 @@ export const useQuestionsContent = ({ currentCard, data }: Props) => {
     handleResetCard,
     handleToggleCard,
     isQuestion,
+    isLoading,
   };
 };

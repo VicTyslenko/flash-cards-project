@@ -12,7 +12,7 @@ export const useAllCardsMode = () => {
 
   const categories = useStoreSelector((state) => state.cards.selectedCategories);
 
-  const { data } = useGetCardsLimitedQuery(cardsLimit);
+  const { data, isLoading } = useGetCardsLimitedQuery(cardsLimit);
 
   const isMastered: boolean = searchParams.get("mastered") === "true";
 
@@ -22,5 +22,5 @@ export const useAllCardsMode = () => {
 
   const filteredData = filterDataByCategories({ data: limitedData, categories, isMastered });
 
-  return { limitedData, hasMore, filteredData };
+  return { limitedData, hasMore, filteredData, isLoading };
 };

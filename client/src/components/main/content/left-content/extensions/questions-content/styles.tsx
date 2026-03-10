@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import { DefaultButton } from "../../../../../../shared/default-button";
 
@@ -135,6 +135,36 @@ export const Title = styled.h1`
   @media screen and (max-width: 480px) {
     font-size: 24px;
   }
+`;
+
+const spin = keyframes`
+  to { transform: rotate(360deg); }
+`;
+
+export const LoadingWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+`;
+
+export const LoadingSpinner = styled.div`
+  width: 48px;
+  height: 48px;
+  border: 4px solid #f3d9f8;
+  border-top-color: #fc8ae5;
+  border-radius: 50%;
+  animation: ${spin} 0.8s linear infinite;
+`;
+
+export const LoadingText = styled.p`
+  font-size: 16px;
+  font-weight: 500;
+  color: #2e1401;
+  opacity: 0.7;
 `;
 
 export const ActionsWrapp = styled.div`
